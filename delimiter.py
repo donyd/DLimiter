@@ -1,7 +1,7 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, flash, redirect
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = '\x14\tH\xf3\xb9\r\x8e\xaa9S\r\xa5\xfc\x98+\xc6\x93\xce\x06\xaa\xbfLR:'
 
 class User:
     def __init__(self, firstname, lastname):
@@ -11,12 +11,15 @@ class User:
     def initials(self):
         return "{}. {}.".format(self.firstname[0], self.lastname[0])
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def index():
+    if request.method == "POST":
+        formData = request.form['columnData']
+        flash(formData)
+        return redirect(url_for('index'))
+    return render_template('index.html')    
     
-    return render_template('index.html', title="Title passed from view to template",
-    user=User("Donal", "D'silva"))
 
 @app.route('/about')
 def about():

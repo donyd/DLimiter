@@ -13,25 +13,34 @@ D'Limiter
         </header>
 
         <section>
-            <div id="columnar">
-                <textarea>
+             <form action="" method="post">
+                <div id="columnar"> 
+                    <textarea  name="columnData"></textarea>
+                    <button class="btn">Create CSV</button>
+                </div>
+             </form>
             
-                </textarea>
-                <button class="btn">Columnar Values</button>
-            </div>
             <div id="oneclickcheck">
                 <label class="oneclickcheck">
                     <input type="checkbox">
                     One Click
                 </label>
             </div>
-                
-            <div id="csv">
-                <textarea>
-                    
-                </textarea>
-                <button class="btn">Create CSV</button>
-            </div>
+
+            <form action="" method="post">
+                <div id="csv">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                        <textarea>{{ message }}</textarea>
+                        {% endfor %}
+                        {% else %}
+                        <textarea name="csvData"></textarea>
+                    {% endif %}
+                    {% endwith %}
+                    <button class="btn">Create Column</button>
+                </div>
+            </form>
             </section>
         
 </article>
