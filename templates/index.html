@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}
+D'Limiter
+{% endblock %}
+
+{% block content %}
+
+<article>
+        <header>
+            <p>Enter columnar data on the left to have CSV output on the right.</p>
+            <p>One Click allows easy assisted pasting and copying.</p>
+        </header>
+
+        <section>
+            <div id="columnar">
+                <textarea>
+            
+                </textarea>
+                <button class="btn">Columnar Values</button>
+            </div>
+            <div id="oneclickcheck">
+                <label class="oneclickcheck">
+                    <input type="checkbox">
+                    One Click
+                </label>
+            </div>
+                
+            <div id="csv">
+                <textarea>
+                    
+                </textarea>
+                <button class="btn">Create CSV</button>
+            </div>
+            </section>
+        
+</article>
+
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+  
