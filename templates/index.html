@@ -14,34 +14,36 @@ D'Limiter
 
         <section>
              
-                <div id="columnar"> 
-                    <textarea  id="columnData"></textarea>
-                    <button class="btn" onclick="convertToCSV()">Create CSV</button>
-                </div>
+            <div id="columnar"> 
+                <textarea  id="columnData"></textarea>
+                <button class="btn" onclick="convertToCSV()">Create CSV</button>
+            </div>
              
             
             <div id="oneclickcheck">
                 <label class="oneclickcheck">
-                    <input type="checkbox">
+                    <input type="checkbox" name="oneclick">
                     One Click
                 </label>
+                <button class="btn" onclick="clearAll()">Clear</button>
             </div>
+            
 
-            <form action="" method="post">
-                <div id="csv">
-                    {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
-                        <textarea>{{ message }}</textarea>
-                        {% endfor %}
-                    {% else %}
-                        <textarea id="csvData"></textarea>
-                    {% endif %}
-                    {% endwith %}
-                    <button class="btn">Create Column</button>
-                </div>
-            </form>
-            </section>
+            
+            <div id="csv">
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <textarea id="csvData">{{ message }}</textarea>
+                    {% endfor %}
+                {% else %}
+                    <textarea id="csvData" ></textarea>
+                {% endif %}
+                {% endwith %}
+                <button class="btn" onclick="convertToColumn()">Create Column</button>
+            </div>
+            
+        </section>
         
 </article>
 

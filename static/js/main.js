@@ -14,7 +14,30 @@ var convertToCSV = function() {
     // trim any extraneous white space and slice to remove final comma
     var trimmedOutput = convertedCSV.trim().slice(0, -1);
     
-    document.getElementById('csvData').value = trimmedOutput;
+    document.getElementById("csvData").value = trimmedOutput;
 
   }
 
+  var convertToColumn = function() {
+    var convertedColumn = '';
+
+    var csvInput = document.getElementById("csvData").value;
+    var tempArr = csvInput.split(',');
+
+      // Create column output from array created from split on ', '
+      tempArr.forEach(function(element){
+        convertedColumn += element + '\n';
+    })
+
+    
+    document.getElementById("columnData").value = convertedColumn.trim();
+    
+    
+}
+
+var clearAll = function() {
+    // clear output textarea
+    document.getElementById("columnData").value = "";
+    document.getElementById("csvData").value = "";
+
+}

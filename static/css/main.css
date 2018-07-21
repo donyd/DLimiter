@@ -172,10 +172,13 @@ textarea {
 
 #oneclickcheck {
         float: left;
-        padding:1%
+        padding: 10% 1% 0 1%;
 }
 
-
+#oneclickcheck > button {
+    display: block;
+    width: 100%;
+}
 
 #columnar > textarea {
     width: 99%;
@@ -210,7 +213,9 @@ article {
 }
 
 
-
+button {
+    background-color:#d0ebfa;
+}
 
 
 
