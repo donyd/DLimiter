@@ -11,13 +11,25 @@ class User:
     def initials(self):
         return "{}. {}.".format(self.firstname[0], self.lastname[0])
 
+def convertCSV(input):
+    convertedCSV = ''
+    temp = input.split('\n')
+    temp = list(map(lambda x: x.rstrip('\r'), temp))
+    for i in range(len(temp)):
+        convertedCSV += temp[i] + ', '
+
+    convertedCSV = convertedCSV.rstrip('\n')
+    convertedCSV = convertedCSV.rstrip(' ,')  
+    return convertedCSV
+
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
-    if request.method == "POST":
-        formData = request.form['columnData']
-        flash(formData)
-        return redirect(url_for('index'))
+    # if request.method == "POST":
+    #     formData = request.form['columnData']
+    #     result = convertCSV(formData)  
+    #     flash(result)
+    #     return redirect(url_for('index'))
     return render_template('index.html')    
     
 

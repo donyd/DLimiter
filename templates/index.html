@@ -13,12 +13,12 @@ D'Limiter
         </header>
 
         <section>
-             <form action="" method="post">
+             
                 <div id="columnar"> 
-                    <textarea  name="columnData"></textarea>
-                    <button class="btn">Create CSV</button>
+                    <textarea  id="columnData"></textarea>
+                    <button class="btn" onclick="convertToCSV()">Create CSV</button>
                 </div>
-             </form>
+             
             
             <div id="oneclickcheck">
                 <label class="oneclickcheck">
@@ -34,8 +34,8 @@ D'Limiter
                         {% for message in messages %}
                         <textarea>{{ message }}</textarea>
                         {% endfor %}
-                        {% else %}
-                        <textarea name="csvData"></textarea>
+                    {% else %}
+                        <textarea id="csvData"></textarea>
                     {% endif %}
                     {% endwith %}
                     <button class="btn">Create Column</button>
