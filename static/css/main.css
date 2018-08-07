@@ -191,7 +191,8 @@ textarea {
 
 .main-container {
     background-image: url("/static/img/bg.png");   
-    background-color: aliceblue;
+    background-color: rgb(201, 228, 252);
+    
     
 }
 
@@ -217,7 +218,26 @@ button {
     background-color:#d0ebfa;
 }
 
+#aboutme {
+    background-color:floralwhite;
+    position: relative;
+    right: 2%;
+    padding: 2%;
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    margin-bottom: 2%;
+    
+}
 
+article {
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+article p {
+    width: 45%;
+}
 
 
 
