@@ -37,5 +37,9 @@ def index():
 def about():
     return render_template('about.html')
 
+@app.route('/change')
+def change():
+    return render_template('change.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -41,3 +41,31 @@ var clearAll = function() {
     document.getElementById("csvData").value = "";
 
 }
+
+var copyCSV = function(){
+    // get oneclick check status
+    var oneClickCheck = document.getElementById("oneclick").checked;
+
+    if (oneClickCheck){
+            var copyText = document.getElementById("csvData");
+            copyText.select();
+            document.execCommand("copy");
+            alert("Copied to clipboard");
+        }
+}
+
+var pasteCol = function() {
+    var oneClickCheck = document.getElementById("oneclick").checked;
+    
+    if(oneClickCheck){
+        
+            var colData = document.getElementById("columnData");
+            colData.select();
+            document.execCommand("paste");
+            if(pasteAlertChecker < 1){
+                alert("pasted!");            
+            }
+           
+        }
+    }
+
